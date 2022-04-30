@@ -84,9 +84,15 @@ class RpnEval
       error_message += "\nPlease verify if you are performing operations between every group
                         of numbers in the RPN expression."
       print TTY::Box.error(error_message, title: { top_left: 'Evaluation error!' })
+      @rpn_expression = ''
+      @rpn_stack = []
+      @rpn_array = []
     else
       expression = @rpn_expression.to_s
+      @rpn_expression = ''
       result = format('%.3f', @rpn_stack.pop.round(3))
+      @rpn_stack = []
+      @rpn_array = []
       print TTY::Box.success("The expression #{expression}
                               \nwas successfully evaluated, the result is: #{result}",
                              title: { top_left: 'Result' })

@@ -92,7 +92,7 @@ class CardinalConverter
 
     print "\n#{TTY::Box.success("Your number: #{num} in words is:
     \n#{format_result(result_str: result)}",
-                         title: { top_left: 'Result' })}\n"
+                                title: { top_left: 'Result' })}\n"
   end
 
   def user_input
