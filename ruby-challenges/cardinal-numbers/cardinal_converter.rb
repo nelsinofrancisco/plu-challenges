@@ -11,7 +11,7 @@ class CardinalConverter
   include Cardinals
 
   def initialize
-    card_hashes
+    num_hashes
   end
 
   def main

@@ -6,7 +6,7 @@
 # hash instance variables with number keys that matches
 # a corresponding word in English.
 module Cardinals
-  def card_hashes
+  def num_hashes
     @up_to_99 = {
       "0": 'zero',
       "1": 'one',
