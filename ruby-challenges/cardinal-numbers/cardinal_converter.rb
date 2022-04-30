@@ -73,6 +73,8 @@ class CardinalConverter
       curr_num = num
     end
 
+    result = 'zero' if curr_num == 0
+    
     while curr_num.positive?
       place = 1000
       if curr_num > 1000

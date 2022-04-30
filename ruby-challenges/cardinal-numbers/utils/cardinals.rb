@@ -8,7 +8,6 @@
 module Cardinals
   def num_hashes
     @up_to_99 = {
-      "0": 'zero',
       "1": 'one',
       "2": 'two',
       "3": 'three',
