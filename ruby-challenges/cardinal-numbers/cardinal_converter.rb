@@ -64,8 +64,14 @@ class CardinalConverter
   end
 
   def convert_to_words(num:)
-    curr_num = num
+    curr_num = nil
     result = ''
+    if num < 0
+      curr_num = num * - 1
+      result = '- '
+    else
+      curr_num = num
+    end
 
     while curr_num.positive?
       place = 1000
