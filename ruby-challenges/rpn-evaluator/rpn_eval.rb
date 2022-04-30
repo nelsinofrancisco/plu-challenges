@@ -26,14 +26,13 @@ class RpnEval
   end
 
   def main
-    # this don't need to exist anymore
     box = TTY::Box.frame('Welcome to Reverse Polish Notation',
                          'CLI tool evaluator',
                          padding: 3,
                          align: :center,
                          border: :thick,
                          title: { top_left: ' RPN EVALUATOR ', bottom_right: ' <3 ' })
-    print "#{box}\n"
+    print "\n#{box}\n"
     loop do
       expression = if @rpn_expression.empty?
                      "''"
@@ -127,7 +126,5 @@ class RpnEval
     end
   end
 end
-
-RpnEval.new.main
 
 # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
