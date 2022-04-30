@@ -90,13 +90,13 @@ class CardinalConverter
       end
     end
 
-    print TTY::Box.success("Your number: #{num} in words is:
-      \n#{format_result(result_str: result)}",
-                           title: { top_left: 'Result' })
+    print "\n#{TTY::Box.success("Your number: #{num} in words is:
+    \n#{format_result(result_str: result)}",
+                         title: { top_left: 'Result' })}\n"
   end
 
   def user_input
-    puts 'Enter the integer your want to convert (You can use underscores to separate digit groups): '
+    print 'Enter the integer your want to convert (You can use underscores to separate digit groups): '
     number = gets.chomp.to_s
     begin
       number_to_int = Integer(number)
