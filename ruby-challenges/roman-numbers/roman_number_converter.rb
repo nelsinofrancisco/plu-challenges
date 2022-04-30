@@ -16,11 +16,11 @@ class RomanNumberConverter
 
   def main
     box = TTY::Box.frame('Convert your numbers into',
-      'Roman Numerals',
-      padding: 3,
-      align: :center,
-      border: :thick,
-      title: { top_left: ' Roman-Numeral-Converter ', bottom_right: ' <3 ' })
+                         'Roman Numerals',
+                         padding: 3,
+                         align: :center,
+                         border: :thick,
+                         title: { top_left: ' Roman-Numeral-Converter ', bottom_right: ' <3 ' })
     print "\n#{box}\n"
 
     loop do
@@ -34,7 +34,7 @@ class RomanNumberConverter
     valid = 'valid'
     valid = "We don't zero the concept of 0,\nin Roman Numerals" if num.zero?
     valid = "The provided number: #{num}\nis out of range. Max range: 3999" if num > 3999
-    valid = "We don't have the concept of negative numbers\nin Roman Numerals" if num < 0
+    valid = "We don't have the concept of negative numbers\nin Roman Numerals" if num.negative?
 
     return if valid == 'valid'
 
@@ -55,13 +55,12 @@ class RomanNumberConverter
     sym_base = base.to_s.to_sym
     roman_numeral_index = (num / (10**base)) - 1
 
-    roman_numeral = @roman_num_hash[sym_base][roman_numeral_index]
-    roman_numeral
+    @roman_num_hash[sym_base][roman_numeral_index]
   end
 
   def print_success_box(num, result)
     box = TTY::Box.success("Your number: #{num} in words is:\n#{result}",
-                  title: { top_left: 'Result' })
+                           title: { top_left: 'Result' })
     print "\n#{box}\n"
   end
 
@@ -86,9 +85,9 @@ class RomanNumberConverter
       base -= 1
     end
 
-    print_success_box(num ,final_num)
+    print_success_box(num, final_num)
 
-    return 'exit'
+    'exit'
   end
 
   def user_input
@@ -96,7 +95,7 @@ class RomanNumberConverter
             \n(between 1 - 3999 range): "
     number = gets.chomp.to_s
 
-    return convert_number(num: number)
+    convert_number(num: number)
   end
 end
 
