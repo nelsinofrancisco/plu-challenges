@@ -1,0 +1,43 @@
+<div id="<%= dom_id property %>">
+  <p>
+    <strong>District:</strong>
+    <%= property.district %>
+  </p>
+
+  <p>
+    <strong>Street:</strong>
+    <%= property.street %>
+  </p>
+
+  <p>
+    <strong>Bedrooms:</strong>
+    <%= property.bedrooms %>
+  </p>
+
+  <p>
+    <strong>Bathrooms:</strong>
+    <%= property.bathrooms %>
+  </p>
+
+  <p>
+    <strong>Availabitly:</strong>
+    <%= property.availabitly %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= property.price %>
+  </p>
+
+  <p>
+    <%= image_tag property.image %>
+    <%# <%= url_for property.image %>
+  </p>
+
+  <p>
+    <% property.pictures.each do |picture| %>
+      <%= image_tag picture %>
+    <% end %>
+  </p>
+
+</div>
