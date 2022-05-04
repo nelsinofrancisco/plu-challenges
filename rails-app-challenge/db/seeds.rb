@@ -30,11 +30,11 @@ images = [
       availability: availabilities[(number % 5)],
       price: prices[(number % 5)],
    )
+   attachable = []
    (0..4).each do |index|
-    @property.images.attach(
-      io: File.open(images[index % 5]),
-      filename: "photo#{index+1}.jpg"
-    )
+   attachable.push({io: File.open(images[index % 5]),
+      filename: "photo#{index+1}.jpg"})
    end
+   @property.images.attach(attachable)
    @property.save()
 end
