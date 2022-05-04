@@ -4,7 +4,7 @@ Aqui estão os challenges que me entregaram por e-mail.
 
 ### Prerequisites
 
-- ImageMagick;
+- Ter o package ImageMagick, sudo dnf install ImageMagick ImageMagick-devel;
 - Ruby Installed in your machine;
 - Rails gem installed in your machine;
 
