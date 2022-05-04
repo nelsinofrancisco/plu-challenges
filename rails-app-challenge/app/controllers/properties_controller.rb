@@ -3,7 +3,14 @@ class PropertiesController < ApplicationController
 
   # GET /properties or /properties.json
   def index
-    @properties = Property.all
+    @pagy, @properties = pagy(Property.all, items: 8)
+
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: { properties: render_to_string(partial: 'properties/partials/properties', formats: [:html]), pagination: view_context.pagy_next_link(@pagy) }
+      }
+    end
   end
 
   # GET /properties/1 or /properties/1.json
