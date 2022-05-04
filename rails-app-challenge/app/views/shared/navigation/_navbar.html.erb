@@ -1,0 +1,64 @@
+<div class="navbar-container">
+  <header data-controller="navigation-bar"
+          class="d-flex align-center justify-between">
+    <section data-navigation-bar-target="headersection"
+             class="d-flex align-center w-100">
+      
+      <% if request.path == '/' || request.path == '/properties' %>
+        <a href="/"
+         class="d-flex align-center logo-cropped"
+         data-navigation-bar-target="headerLogo"
+         data-action="load->navigation-bar#toggleCropImage load@window->navigation-bar#toggleCropImage resize@window->navigation-bar#toggleCropImage">
+          <%= image_tag 'logos/logo-dark.svg',
+              class: "logo" %>
+        </a>
+      <% else %>
+        <a href="/"
+         class="d-flex align-center"
+         data-navigation-bar-target="headerLogo" >
+          <%= image_tag 'logos/logo-dark.svg',
+              class: "logo" %>
+        </a>
+      <% end %>
+        
+
+      <div id="location-container"
+           class="d-flex location-container justify-center align-center"
+          >
+          <% if request.path == '/' || request.path == '/properties' %>
+            <h4 class="location-header"
+                data-navigation-bar-target="locationHeader" >
+                  Explore • São Paulo
+            </h4>
+          <% end %>
+          <%= image_tag 'icons/arrow-down.svg',
+                        class: 'd-none',
+                        "data-navigation-bar-target": "locationIcon" %>
+      </div>
+      <%# This section is hidden in mobile view %>
+      <nav id="links-container" class="desk-only-flex d-none d-flex align-center">
+        <div class="d-flex align-center justify-center globe-container">
+          <%= image_tag 'icons/globe.svg', class: 'globe-icon' %>
+        </div>
+        <div class="d-flex align-center ml-links">
+          <a href="/properties" class="nav-links-style">
+            APARTMENTS
+          </a>
+        </div>
+        <div class="d-flex align-center ml-links">
+          <a href="/properties/new" class="nav-links-style">
+            ADD APARTMENT
+          </a>
+        </div>
+      </nav>
+    </section>
+    <%# Another controller should handle the toggle/untoggle of the modal options %>
+    <div class="ham-menu-container"
+         data-navigation-bar-target="hamBtnCon"
+         >
+        <button class="ham-menu-btn d-flex align-center justify-center" data-action="click->navigation-bar#showMenu">
+          <%= image_tag 'icons/hamburguer_menu.svg' %>
+        </button>
+    </div>
+  </header>
+</div>

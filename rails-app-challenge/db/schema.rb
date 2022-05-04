@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_02_000956) do
     t.string "street"
     t.integer "bedrooms"
     t.integer "bathrooms"
-    t.date "availabitly"
+    t.date "availability"
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

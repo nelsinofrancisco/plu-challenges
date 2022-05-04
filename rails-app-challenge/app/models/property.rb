@@ -1,4 +1,3 @@
 class Property < ApplicationRecord
-  has_one_attached :image
-  has_many_attached :pictures
+  has_many_attached :images
 end

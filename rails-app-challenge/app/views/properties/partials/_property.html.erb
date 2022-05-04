@@ -1,43 +1,34 @@
-<div id="<%= dom_id property %>">
-  <p>
-    <strong>District:</strong>
-    <%= property.district %>
-  </p>
-
-  <p>
-    <strong>Street:</strong>
-    <%= property.street %>
-  </p>
-
-  <p>
-    <strong>Bedrooms:</strong>
-    <%= property.bedrooms %>
-  </p>
-
-  <p>
-    <strong>Bathrooms:</strong>
-    <%= property.bathrooms %>
-  </p>
-
-  <p>
-    <strong>Availabitly:</strong>
-    <%= property.availabitly %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= property.price %>
-  </p>
-
-  <p>
-    <%= image_tag property.image %>
-    <%# <%= url_for property.image %>
-  </p>
-
-  <p>
-    <% property.pictures.each do |picture| %>
-      <%= image_tag picture %>
-    <% end %>
-  </p>
-
+<div class="property-container" >
+  <a class="property-link" href="<%= property_path(property.id)%>">
+    <div class="property-data-container">
+      <div class="slide-show-container">
+        <%= image_tag property.images[3], class: "property-img" %>
+      </div>
+      <div class="property-info-container">
+        <div>
+          <span class="property-info-title3"><%= property.district %></span>
+          <h3 class="property-info-title1"><%= property.street %></h3>
+          <span class="property-info-title4"><%= property.bedrooms %> bedroom • <%= property.bathrooms %> bath</span>
+        </div>
+        <div class="property-price-container">
+          <div class="price-wrapper">
+            <span class="property-info-title3 line-through">R$<%= property.price %></span>
+            <h4 class="property-info-title2">
+              R$<%= (property.price * 0.9699).round() %>
+              <span class="property-info-title4">/mo</span>
+            </h4>
+          </div>
+          <div>
+            <div class="property-availability-wrapper">
+              <span class="property-info-title4">Available</span>
+              <span class="property-info-title5"><%= Date.parse(property.availability.to_s).strftime('%d %b') %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
 </div>
+
+
+

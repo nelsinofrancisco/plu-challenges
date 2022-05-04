@@ -11,7 +11,12 @@
   </head>
 
   <body>
-    <div id="modal-container"></div>
-    <%= yield %>
+    <div id="mob-modal" class="d-none">
+      <%= render partial: 'shared/navigation/moblinks' %>
+    </div>
+    <%= render partial: 'shared/navigation/navbar' %>
+    <main class="main-container">
+      <%= yield %>
+    </main>
   </body>
 </html>
