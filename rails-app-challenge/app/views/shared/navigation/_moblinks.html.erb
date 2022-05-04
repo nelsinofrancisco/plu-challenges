@@ -1,0 +1,82 @@
+<div class="p-absolute mob-menu-container" data-controller="navigation-bar">
+  <div class="p-relative mob-menu-items-container">
+    <%# logo container %>
+    <h2 class="d-flex mob-menu-header-2">
+      <div class="d-flex w-100 justify-center">
+        <%= image_tag 'logos/logo-dark.svg', class: 'logo' %>
+      </div>
+      <div class="d-flex align-center c-pointer" data-action="click->navigation-bar#closeMenu">
+        <%= image_tag 'icons/close-icon.svg' %>
+      </div>
+    </h2>
+    <%# Div dentro de div com scroll %>
+    <div class="mob-links-container">
+      <%# Div com M-top 2rem %>
+      <div class="mob-link-items-container">
+        <%# Links %>
+        <ul>
+          <li>
+            <a class="nav-links-style mob-links-items-a" href="/" >
+              APARTMENTS
+            </a>
+            <hr>
+          </li>
+          <li>
+            <a class="nav-links-style mob-links-items-a" href="/properties/new">
+              ADD APARTMENT
+            </a>
+            <hr>
+          </li>
+        </ul>
+        <%# Contact %>
+        <p class="mob-link-items-p">Contact Us</p>
+        <ul>
+          <li>
+            <div class="d-flex"> 
+              <%= image_tag 'icons/whatsapp.svg', class: 'mob-links-contact-icon' %>
+              <a class="nav-links-style mob-links-items-a" href="/">
+                +55 31900000000
+              </a>            
+            </div>
+
+            <hr>
+          </li>
+          <li>
+            <div class="d-flex"> 
+              <%= image_tag 'icons/phone.svg', class: 'mob-links-contact-icon' %>
+              <a class="nav-links-style mob-links-items-a" href="/">
+                +55 31900000000
+              </a>            
+            </div>
+            <hr>
+          </li>
+          <li>
+            <div class="d-flex"> 
+              <%= image_tag 'icons/envelope.svg', class: 'mob-links-contact-icon' %>
+              <a class="nav-links-style mob-links-items-a" href="/">
+                foo@foo.com
+              </a>           
+            </div>
+            <hr>
+          </li>
+        </ul>
+        <%# Language %>
+        <p class="mob-link-items-p">Language</p>
+        <ul>
+          <li>
+            <div class="d-flex justify-between">
+              <div class="d-flex">
+                <%= image_tag 'icons/globe.svg', class: 'mob-links-contact-icon' %>
+                <a class="nav-links-style mob-links-items-a" href="/">
+                  English
+                </a>
+              </div>
+              <%= image_tag 'icons/mini-arrow-right.svg' %>
+            </div>
+            <hr>          
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

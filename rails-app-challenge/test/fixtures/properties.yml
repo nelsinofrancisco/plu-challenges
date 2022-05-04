@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  district: MyString
+  street: MyString
+  bedrooms: 1
+  bathrooms: 1
+  availabitly: 2022-05-01
+  price: 1.5
+
+two:
+  district: MyString
+  street: MyString
+  bedrooms: 1
+  bathrooms: 1
+  availabitly: 2022-05-01
+  price: 1.5

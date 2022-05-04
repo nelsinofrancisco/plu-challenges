@@ -1,0 +1,35 @@
+
+<p style="color: green"><%= notice %></p>
+
+<div data-controller="increment-pagination">
+  <div class="properties-container"
+       id="properties"
+       data-increment-pagination-target="properties">
+      <%= render partial: 'properties/partials/properties' %>
+  </div>
+
+  <div class="load-more-container"> 
+    <div class="load-more-items-container">
+      <div>
+        <p class="load-more-p">Showing <span class="load-more-p" data-increment-pagination-target="counter">8</span> of <span class="load-more-p" data-increment-pagination-target="total"><%= Property.count %> properties</span></p>
+      </div>
+      <div class="counter-bar-container">
+        <span class="full-counter-bar">
+          <span class="progress-counter-bar"
+                data-increment-pagination-target="progressBar"
+                data-action="load@window->increment-pagination#updateCounterProgress"></span>
+        </span>
+      </div>
+      <div class="load-more-btn-wrapper">
+        <button class='load-more-btn' data-action="click->increment-pagination#loadMore">
+          Load more
+        </button>
+      </div>
+      <div class="load-more-btn-wrapper d-none" data-increment-pagination-target="pagination"
+        >
+        <%== pagy_next_link(@pagy, text: 'Load more', link_extra: 'style="display: none;"') %>
+      </div>
+    </div>
+  </div>
+
+<div>
